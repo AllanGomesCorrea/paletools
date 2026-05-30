@@ -52,8 +52,8 @@ async function init() {
     if (login || (
         !services
         || !services.Localization
-        || !services.Authentication.sessionUtas
-        || !services.Authentication.sessionUtas.url)) {
+        || !services.Authentication.getUtasSession
+        || !services.Authentication.getUtasSession())) {
         setTimeout(init, 1000);
         return;
     }

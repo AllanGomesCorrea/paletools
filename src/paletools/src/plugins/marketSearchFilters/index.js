@@ -38,9 +38,9 @@ function run() {
         }
     });
 
-    const UTTransfersHubViewController_requestTransferTargetData_ = UTTransfersHubViewController.prototype._requestTransferTargetData;
+    const UTTransfersHubViewController_requestTransferTargetData_ = UTTransfersHubViewController.prototype.requestTransferTargetData;
 
-    UTTransfersHubViewController.prototype._requestTransferTargetData = function () {
+    UTTransfersHubViewController.prototype.requestTransferTargetData = function () {
         UTTransfersHubViewController_requestTransferTargetData_.call(this);
     };
 
@@ -134,8 +134,8 @@ function run() {
         }
     }
 
-    const UTMarketSearchFiltersViewController_eSearchCategoryChanged = UTMarketSearchFiltersViewController.prototype._eSearchCategoryChanged;
-    UTMarketSearchFiltersViewController.prototype._eSearchCategoryChanged = function _eSearchCategoryChanged(t, e, i) {
+    const UTMarketSearchFiltersViewController_eSearchCategoryChanged = UTMarketSearchFiltersViewController.prototype.eSearchCategoryChanged;
+    UTMarketSearchFiltersViewController.prototype.eSearchCategoryChanged = function eSearchCategoryChanged(t, e, i) {
         UTMarketSearchFiltersViewController_eSearchCategoryChanged.call(this, t, e, i);
 
         if (i.id === enums.SearchBucket.PLAYER) {
@@ -286,8 +286,8 @@ function run() {
         }
     }
 
-    const UTMarketSearchFiltersViewController__eResetSelected = UTMarketSearchFiltersViewController.prototype._eResetSelected;
-    UTMarketSearchFiltersViewController.prototype._eResetSelected = function _eResetSelected() {
+    const UTMarketSearchFiltersViewController__eResetSelected = UTMarketSearchFiltersViewController.prototype.eResetSelected;
+    UTMarketSearchFiltersViewController.prototype.eResetSelected = function eResetSelected() {
         if (this.getView()._playerId) {
             this.getView()._playerId.clear();
             this._viewmodel.searchCriteria.defId = [];

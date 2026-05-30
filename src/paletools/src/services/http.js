@@ -10,10 +10,11 @@ export default async function http(url, method, body, options = null) {
         return await externalHttp(url, method, body, options);
     }
     else {
-        const response = await fetch(`${services.Authentication.sessionUtas.url}/ut/game/fifa${APP_YEAR_SHORT}/${url}`, {
+        const session = services.Authentication.getFCASSession();
+        const response = await fetch(`${session.url}/${url}`, {
             method: method || 'GET',
             headers: {
-                "X-UT-SID": services.Authentication.getUtasSession()["id"],
+                "X-FC-SID": session.id,
                 "Content-Type": "application/json",
             },
             body: body ? JSON.stringify(body) : null

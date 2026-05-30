@@ -28,9 +28,9 @@ export function clearSnipeRequests() {
 
 const _goBackRequests = [];
 export function enableMarketSnipe() {
-    const UTNavigationController_showController = UTNavigationController.prototype._showController;
-    UTNavigationController.prototype._showController = function (...args) {
-        UTNavigationController_showController.call(this, ...args);
+    const UTNavigationController_show = UTNavigationController.prototype.show;
+    UTNavigationController.prototype.show = function (...args) {
+        UTNavigationController_show.call(this, ...args);
 
         if (_goBackRequests.length > 0) {
             const goBackRequest = _goBackRequests.shift();
